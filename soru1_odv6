@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(int argc, char *argv[])
+{
+  	char caractere[100];
+	FILE *file;
+	char * word = argv[1];
+	int c,count=0;
+	
+	file = fopen("bana.txt","r");
+	
+	if (file != NULL)
+	{
+		do
+		{
+			c = scanf("%s",caractere);
+			if(strcmp(word,caractere) == 0)
+			{
+				count=1;
+				break;
+			}
+		}while(c = getc(file) !=EOF);
+	}
+	if(count = 1)
+	printf("kelime bulunmaktadir,yasakli olmasi gerekiyor");
+        else
+	printf ("kelime bulunmamaktadir");
+	
+	getchar();
+	return 0;
+}
